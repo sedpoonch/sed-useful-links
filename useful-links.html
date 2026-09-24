@@ -7,86 +7,115 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F4F6F8;
       margin: 0;
       padding: 20px;
+    }
+
+    h2 {
       text-align: center;
+      color: #005B9F;
+      margin-bottom: 24px;
+      font-size: 24px;
     }
 
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 400px;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 600px;
       margin: auto;
     }
 
-    .fancy-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .card {
+      position: relative;
+      display: block;
       text-decoration: none;
+      border-radius: 16px;
+      padding: 16px;
+      min-height: 140px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+
+    .card:hover, .card:active {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .card-title {
       font-size: 18px;
-      padding: 15px 20px;
-      border-radius: 12px;
-      color: white;
       font-weight: bold;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      transition: all 0.2s ease-in-out;
+      color: #333333;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
     }
 
-    .fancy-button i {
-      margin-right: 10px;
-      font-size: 20px;
+    .card-icon {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      font-size: 55px;
+      color: #333333;
+      opacity: 0.9;
     }
 
-    .fancy-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    /* Custom Colors matching your reference image */
+    .bg-cream { background-color: #FFEFC8; }
+    .bg-yellow { background-color: #FFD54F; }
+    .bg-lightblue { background-color: #E1F5FE; }
+    .bg-lightyellow { background-color: #FFF59D; }
+    
+    /* Blue card needs white text/icon for contrast */
+    .bg-blue { 
+        background-color: #29B6F6; 
     }
-
-    .blue { background-color: #007BFF; }
-    .green { background-color: #28a745; }
-    .orange { background-color: #fd7e14; }
-    .purple { background-color: #6f42c1; }
-    .red { background-color: #dc3545; }
+    .bg-blue .card-title, .bg-blue .card-icon {
+        color: #FFFFFF;
+    }
+    
   </style>
 </head>
 <body>
 
-  <h1>Useful Links</h1>
+  <h2>Useful Links</h2>
 
-  <div class="btn-container">
+  <div class="grid-container">
 
-<a href="https://facebook.com" class="fancy-button orange" target="_blank">
-      <i class="fas fa-facebook"></i> Facebook
+    <a href="https://facebook.com" class="card bg-cream" target="_blank">
+      <div class="card-title">Facebook</div>
+      <i class="fas fa-facebook card-icon" style="color: #1877F2;"></i>
     </a>
     
-    <a href="https://www.google.com" class="fancy-button blue" target="_blank">
-      <i class="fas fa-globe"></i> Google
+    <a href="https://www.google.com" class="card bg-yellow" target="_blank">
+      <div class="card-title">Google</div>
+      <i class="fab fa-google card-icon"></i>
     </a>
 
-    <a href="https://www.wikipedia.org" class="fancy-button green" target="_blank">
-      <i class="fas fa-book"></i> Wikipedia
+    <a href="https://www.wikipedia.org" class="card bg-blue" target="_blank">
+      <div class="card-title">Wikipedia</div>
+      <i class="fab fa-wikipedia-w card-icon"></i>
     </a>
 
-    <a href="https://www.youtube.com" class="fancy-button red" target="_blank">
-      <i class="fab fa-youtube"></i> YouTube
+    <a href="https://www.youtube.com" class="card bg-lightblue" target="_blank">
+      <div class="card-title">YouTube</div>
+      <i class="fab fa-youtube card-icon" style="color: #FF0000;"></i>
     </a>
 
-    <a href="https://mail.google.com" class="fancy-button orange" target="_blank">
-      <i class="fas fa-envelope"></i> Gmail
+    <a href="https://mail.google.com" class="card bg-yellow" target="_blank">
+      <div class="card-title">Gmail</div>
+      <i class="fas fa-envelope card-icon" style="color: #EA4335;"></i>
     </a>
 
-    <a href="https://chat.openai.com" class="fancy-button purple" target="_blank">
-      <i class="fas fa-robot"></i> ChatGPT
+    <a href="https://chat.openai.com" class="card bg-lightyellow" target="_blank">
+      <div class="card-title">ChatGPT</div>
+      <i class="fas fa-robot card-icon" style="color: #10A37F;"></i>
     </a>
+
   </div>
 
 </body>
